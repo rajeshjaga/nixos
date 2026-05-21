@@ -384,4 +384,4 @@ binds {
     Mod+Shift+P { power-off-monitors; }
 }
 
-spawn-sh-at-startup "swaybg -m fill -i /Pictures/wallies/Pb1bqtn.jpeg"
+spawn-sh-at-startup "swaybg -m fill -i ~/Pictures/wallies/Pb1bqtn.jpeg"

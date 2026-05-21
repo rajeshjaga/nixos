@@ -16,6 +16,8 @@
             pkgs.pywal16
             pkgs.imagemagick
             pkgs.wl-clipboard
+            pkgs.kdePackages.breeze-gtk
+            pkgs.bibata-cursors
             pkgs.papirus-icon-theme
             inputs.zen-browser.packages.${pkgs.system}.default
             inputs.prismlauncher.packages.${pkgs.system}.prismlauncher

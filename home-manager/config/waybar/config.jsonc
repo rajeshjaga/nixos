@@ -1,70 +1,87 @@
 // -*- mode: jsonc -*-
 {
-    "position": "top", // Waybar position (top|bottom|left|right)
-    "height": 30, // Waybar height (to be removed for auto height)
-    "spacing": 4, // Gaps between modules (4px)
+    "position": "top", 
+    "height": 32,
+    "spacing": 10,
+    "separator": "|",
     "modules-left": [
         "niri/workspaces",
+        "niri/window",
     ],
     "modules-center": [
-        "niri/window"
+        "clock",
+        "custom/notification",
     ],
     "modules-right": [
+        "mpris",
         "pulseaudio",
         "network",
         "battery",
-        "clock",
         "tray",
     ],
- 
-        "niri/workspaces": {
-            "format": "{value}",
+
+    "niri/workspaces": {
+        "format": "{value}",
+    },
+    "niri/window": {
+        "format": "{app_id}",
+        "icon": true,
+        "max-length": 30,
+        "separate-outputs": true
+    },
+    "tray": {
+        "spacing": 10,
+    },
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%H:%M - %a %d %B %Y}"
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
         },
-        "niri/window": {
-            "format": "{}",
-            "max-length": 30,
-            "separate-outputs": true
+        "format": "{icon} {capacity}%",
+        "format-full": "{icon} {capacity}%",
+        "format-charging": "  {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": [" ", " ", " ", " ", " "]
+    },
+    "network": {
+        "format-wifi": "  ({signalStrength}%)",
+        "format-ethernet": "󰈁 {ipaddr}/{cidr}",
+        "tooltip-format": "󰈁 {ifname} via {gwaddr}",
+        "format-linked": "󰈂 {ifname} (No IP)",
+        "format-disconnected": "󰈂 Disconnected",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "on-click": "kitty -e nmtui"
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": " {volume}% {icon} ",
+        "format-bluetooth-muted": " {icon} ",
+        "format-muted": "{icon} mute",
+        "format-source": "  {volume}%",
+        "format-source-muted": " ",
+        "format-icons": {
+            "headphone": " ",
+            "default": ["", " ", " "]
         },
-        "tray": {
-            "spacing": 10,
+        "on-click": "pavucontrol"
+    },
+    "mpris": {
+        "format": "{player_icon} {title}",
+        "max-length":20,
+        "format-paused": "{status_icon} {title}",
+        "tooltip-format" : "<big>{Artist}</big><tt><small>{title} - {player_icon}</small>",
+        "player-icons": {
+            "default": "▶",
+            "mpv": "🎵"
         },
-        "clock": {
-            "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-            "format-alt": "{:%Y-%m-%d}"
+        "status-icons": {
+            "paused": "⏸"
         },
-        "battery": {
-            "states": {
-                "warning": 30,
-                "critical": 15
-            },
-            "format": "{icon} {capacity}%",
-            "format-full": "{icon} {capacity}%",
-            "format-charging": "  {capacity}%",
-            "format-plugged": " {capacity}%",
-            "format-alt": "{time} {icon}",
-            "format-icons": [" ", " ", " ", " ", " "]
-        },
-        "network": {
-            "format-wifi": "  {essid}({signalStrength}%)",
-            "format-ethernet": "󰈁 {ipaddr}/{cidr}",
-            "tooltip-format": "󰈁 {ifname} via {gwaddr}",
-            "format-linked": "󰈂 {ifname} (No IP)",
-            "format-disconnected": "󰈂 Disconnected",
-            "format-alt": "{ifname}: {ipaddr}/{cidr}",
-            "on-click": "kitty -e nmtui"
-        },
-        "pulseaudio": {
-            "format": "{icon} {volume}% {format_source}",
-            "format-bluetooth": " {volume}% {icon} {format_source}",
-            "format-bluetooth-muted": " {icon} {format_source}",
-            "format-muted": " {format_source}",
-            "format-source": "  {volume}%",
-            "format-source-muted": " ",
-            "format-icons": {
-                "headphone": " ",
-                "default": ["", " ", " "]
-            },
-            "on-click": "pavucontrol"
-        },
+    },
 
 }

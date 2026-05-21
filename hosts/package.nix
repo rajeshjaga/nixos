@@ -11,7 +11,7 @@
         font-awesome
         nerd-fonts.jetbrains-mono
         nerd-fonts.ubuntu
-        nerd-fonts.ubuntu-sans
+        ubuntu-sans
     ];
     fonts.fontconfig = {
         defaultFonts = {
