@@ -1,13 +1,33 @@
 {pkgs, ...}:
 {
     nixpkgs.config.allowUnfree = true;
+    fonts.packages = with pkgs;[
+        noto-fonts
+        noto-fonts-cjk-sans
+        noto-fonts-color-emoji
+        liberation_ttf
+        fira-code
+        fira-code-symbols
+        font-awesome
+        nerd-fonts.jetbrains-mono
+        nerd-fonts.ubuntu
+        nerd-fonts.ubuntu-sans
+    ];
+    fonts.fontconfig = {
+        defaultFonts = {
+            serif = [  "Liberation Serif"];
+            sansSerif = [ "Ubuntu"  ];
+            monospace = [ "JetBrainsMono Nerd Font" ];
+        };
+    };
     environment.systemPackages = with pkgs; [
-            ansible
+        ansible
             aria2
             atuin
             bat
             btop
             bun
+            brillo
             chromium
             cmake
             curl
@@ -16,7 +36,6 @@
             fd
             feh
             fzf
-            git
             go
             htop
             imagemagick
@@ -26,7 +45,8 @@
             lazygit
             libnotify
             lua51Packages.luarocks
-            #lutris
+            lutris
+            mako
             meson
             mpdris2
             mpv
@@ -35,21 +55,26 @@
             netcat
             ninja
             nmap
+            nodejs_latest
+            tree-sitter
             nwg-look
             obs-studio
             obsidian
             pavucontrol
+            pciutils
+            psmisc
             postgresql
-            pywal16
             qbittorrent
             ranger
             rclone
             ripgrep
             rofi
-            #rustdesk
             rustup
+            swayidle
+            swaylock
+            swaynotificationcenter
             tailscale
-            #terraform
+            terraform
             terminus_font
             thunar
             thunar-volman
@@ -69,5 +94,5 @@
             zathura
             zathuraPkgs.zathura_pdf_poppler
             zoxide
-    ];
+            ];
 }

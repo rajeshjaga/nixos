@@ -10,7 +10,7 @@
 
 
 	time.timeZone = "Asia/Kolkata";
-	i18n.defaultLocale = "en_IN.UTF-8";
+	i18n.defaultLocale = "en_IN";
 
 	programs.firefox.enable = true;
 	programs.niri.enable = true;
@@ -21,8 +21,15 @@
 	};
 
     my-system.virtualization.enable = true;
-    nix.settings.experimental-features = ["nix-command" "flakes"];
+    victus.c_state.enable = true;
+    nvidia.victus.enable = true;
+    nix.settings = {
+        experimental-features = ["nix-command" "flakes"];
+        substituters = [ "https://niri.cachix.org" ];
+        trusted-public-keys = [
+            "niri.cachix.org-1:Wv0OmO7PsuocRKzfDoJ3mulSl7Z6oezYhGhR+3W2964="
+            ];
+        };
 
 	system.stateVersion = "25.11";
 }
-
