@@ -11,5 +11,9 @@
   };
   services.swayidle = {
     enable = true;
+    timeouts = [
+    { timeout = 300; command = "${pkgs.swaylock}/bin/swaylock -f -i /home/jraj/Pictures/wallies/wallhaven-yqg6r7_1920x1080.png"; }
+    { timeout = 360; command = "${pkgs.systemd}/bin/systemctl suspend"; }
+    ];
   };
 }

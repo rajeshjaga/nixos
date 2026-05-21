@@ -3,6 +3,10 @@
 {
     imports = [
         ./kitty.nix
+        ./niri.nix
+        ./rofi.nix
+        ./theme.nix
+        ./waybar.nix
     ];
     home.username = "jraj";
     home.homeDirectory = "/home/jraj";

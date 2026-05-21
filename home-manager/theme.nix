@@ -8,11 +8,11 @@
         };
         theme = {
             name = "Breeze-Dark";
-            package = pkgs.breeze-gtk
+            package = pkgs.breeze-gtk;
         };
         iconTheme = {
             name = "Papirus";
-            package = pkgs.papirus-icon-theme
+            package = pkgs.papirus-icon-theme;
         };
     };
 }

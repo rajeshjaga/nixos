@@ -1,0 +1,66 @@
+@import "/home/jraj/.cache/wal/colors-waybar.css";
+* {
+    font-family: JetBrainsMono Nerd Font, monospace;
+    font-size: 18px;
+}
+
+window#waybar {
+    background-color: @background;
+    color: @foreground;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+button {
+    border: none;
+    border-radius: 0;
+}
+
+button:hover {
+    background: inherit;
+    border-bottom: 2px solid @color15;
+}
+
+#workspaces button {
+    padding: 5px 6px;
+    color: @foreground;
+    border-bottom: 2px solid @background;
+}
+
+#workspaces button:hover {
+    background: @color9;
+}
+
+#workspaces button.focused, #workspaces button.active {
+    border-bottom: 2px solid @color15;
+    background: @color8;
+}
+
+#workspaces button.urgent {
+    background-color: @color9;
+}
+
+#clock,
+#battery,
+#pulseaudio,
+#battery
+#network,
+#tray{
+    padding: 5px 15px;
+    color: @foreground;
+}
+
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+.modules-left , .modules-right{
+    border-radius: 10px;
+}
+
+.modules-left {
+}
+.modules-right {
+    margin-right: 5px;
+}
