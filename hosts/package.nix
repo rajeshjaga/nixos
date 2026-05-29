@@ -51,6 +51,7 @@
             mpdris2
             mpv
             gnumake
+            libgcc
             ncdu
             netcat
             ninja

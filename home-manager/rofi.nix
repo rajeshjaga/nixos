@@ -1,8 +1,8 @@
 {pkgs, config, ... }:{
     programs.rofi = {
         enable = true;
-        font = "JetBrainsMono Nerd Font";
+        font = "JetBrainsMono Nerd Font 14";
         modes = [ "drun" "window" ];
-        theme = "~/.cache/wal/colors-rofi-dark.rasi";
+        theme = ./config/rofi/theme.rasi ;
     };
 }

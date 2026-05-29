@@ -10,7 +10,7 @@
 
 
 	time.timeZone = "Asia/Kolkata";
-	i18n.defaultLocale = "en_IN.UTF-8";
+	i18n.defaultLocale = "en_IN";
 
 	programs.firefox.enable = true;
 	programs.niri.enable = true;

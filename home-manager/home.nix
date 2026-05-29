@@ -14,6 +14,9 @@
 
         home.packages = [
             pkgs.pywal16
+	    pkgs.w3m
+            pkgs.swaybg
+            pkgs.neovim
             pkgs.imagemagick
             pkgs.wl-clipboard
             pkgs.kdePackages.breeze-gtk
